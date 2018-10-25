@@ -31,9 +31,9 @@ if (!isProduction) {
 }
 
 if(isProduction){
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect('mongodb://mongouser:mong0user@ds237832.mlab.com:37832/it339mongo');
 } else {
-  mongoose.connect('mongodb://localhost/conduit');
+  mongoose.connect('mongodb://mongouser:mong0user@ds237832.mlab.com:37832/it339mongo');
   mongoose.set('debug', true);
 }
 
