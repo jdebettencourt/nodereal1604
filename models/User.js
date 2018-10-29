@@ -3,7 +3,8 @@ var uniqueValidator = require('mongoose-unique-validator');
 var crypto = require('crypto');
 var jwt = require('jsonwebtoken');
 var secret = require('../config').secret;
-
+var secret = "conduit";
+/// var set because want to use same dataset for development and production.
 var UserSchema = new mongoose.Schema({
   username: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/^[a-zA-Z0-9]+$/, 'is invalid'], index: true},
   email: {type: String, lowercase: true, unique: true, required: [true, "can't be blank"], match: [/\S+@\S+\.\S+/, 'is invalid'], index: true},
